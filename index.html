@@ -38,66 +38,6 @@
       font-family: 'Playfair Display', serif;
     }
 
-    @keyframes fadeSlideDown {
-      0% { opacity: 0; transform: translateY(-40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .menu-icon {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      font-size: 30px;
-      cursor: pointer;
-    }
-
-    .menu-dropdown {
-      display: none;
-      position: absolute;
-      top: 70px;
-      left: 20px;
-      background-color: #fff;
-      color: #333;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .menu-dropdown a {
-      display: block;
-      padding: 10px 20px;
-      text-decoration: none;
-      color: #333;
-    }
-
-    .menu-dropdown a:hover {
-      background-color: #fceae6;
-    }
-
-    .submenu {
-      display: none;
-      background-color: #fdf6f2;
-      border-top: 1px solid #ccc;
-    }
-
-    .submenu a {
-      padding-left: 30px;
-    }
-
-    .buscador-container {
-      text-align: center;
-      margin: 30px;
-    }
-
-    #buscador {
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-
     .productos {
       display: flex;
       justify-content: center;
@@ -114,21 +54,11 @@
       border-radius: 20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
-      cursor: pointer;
-      transform: scale(1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-      opacity: 0;
-      animation: fadeInScale 0.8s ease forwards;
-      animation-delay: var(--delay, 0s);
+      transition: transform 0.3s ease;
     }
 
-    .producto:active {
-      transform: scale(0.95);
-    }
-
-    @keyframes fadeInScale {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
+    .producto:hover {
+      transform: scale(1.05);
     }
 
     .producto img {
@@ -144,182 +74,47 @@
     }
 
     .descripcion {
-      font-family: Arial, sans-serif;
       font-size: 14px;
-      text-align: center;
-      margin-bottom: 8px;
       color: #666;
-    }
-
-    .ver-mas-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-
-    #verMasBtn {
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: #ff6f61;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    #verMasBtn:hover {
-      background-color: #e35a4f;
-    }
-
-    .oculto {
-      display: none;
     }
   </style>
 </head>
 <body>
-    <header>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div class="menu-dropdown" id="menu">
-      <a href="#" onclick="toggleSubmenu('contactoSubmenu')">Contáctanos</a>
-      <div class="submenu" id="contactoSubmenu">
-        <a href="https://instagram.com/xiselect" target="_blank">Instagram</a>
-        <a href="mailto:xisupply@email.com">Gmail</a>
-      </div>
-      <a href="#">Chat</a>
-      <a href="#">Sobre Nosotros</a>
-    </div>
+  <header>
     <h1>XI Supply</h1>
     <p>Camisetas Exclusivas</p>
   </header>
 
-  <div class="buscador-container">
-    <input type="text" id="buscador" placeholder="Buscar camiseta..." onkeyup="filtrarProductos()">
+  <div class="productos">
+    <a class="producto" href="https://articulo.mercadolibre.com.ar/MLA-1471915639-camiseta-titular-authentic-boca-juniors-2425-iu1243-adidas-_JM" target="_blank">
+      <p class="descripcion">Camiseta Boca Juniors</p>
+      <img src="CamisetaBocaJuniorsBetsson.png" alt="Boca Juniors" />
+      <h2>Boca Juniors</h2>
+    </a>
+
+    <a class="producto" href="https://www.mercadolibre.com.ar/camiseta-adidas-river-plate-2024/p/MLA32717088" target="_blank">
+      <p class="descripcion">Camiseta River Plate</p>
+      <img src="CamisetaRiverPlateRetro.jpeg" alt="River Plate" />
+      <h2>River Plate</h2>
+    </a>
+
+    <a class="producto" href="https://www.mercadolibre.com.ar/camiseta-seleccion-argentina-adidas-2022/p/MLA31298238" target="_blank">
+      <p class="descripcion">Camiseta Selección Argentina</p>
+      <img src="CamisetaArgentinoRetro.jpeg" alt="Selección Argentina" />
+      <h2>Selección Argentina</h2>
+    </a>
+
+    <a class="producto" href="https://www.mercadolibre.com.ar/camiseta-racing-club-titular-2023/p/MLA32715952" target="_blank">
+      <p class="descripcion">Camiseta Racing Club</p>
+      <img src="CamisetaRacingClubRCA.jpeg" alt="Racing Club" />
+      <h2>Racing Club</h2>
+    </a>
+
+    <a class="producto" href="https://www.mercadolibre.com.ar/camiseta-boca-juniors-retro-2000s/p/MLA27812382" target="_blank">
+      <p class="descripcion">Camiseta Boca Juniors Retro 2009</p>
+      <img src="BocaJuniorsRetro2009.jpeg" alt="Boca Juniors Retro" />
+      <h2>Boca Juniors Retro 2009</h2>
+    </a>
   </div>
-
-  <div class="productos" id="listaProductos">
-   <a class="producto" href="https://articulo.mercadolibre.com.ar/MLA-1471915639-camiseta-titular-authentic-boca-juniors-2425-iu1243-adidas-_JM?searchVariation=182779683614&highlight=true&headerTopBrand=true#polycard_client=search-nordic&searchVariation=182779683614&position=12&search_layout=grid&type=item&tracking_id=609e896b-98d2-48f0-bec6-388b656a4a2a" target="_blank">
-  <p class="descripcion">Camiseta Boca Juniors</p>
-  <img src="CamisetaBocaJuniorsBetsson.png" alt="Boca Juniors" />
-  <h2>Boca Juniors</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-adidas-river-plate-2024/p/MLA32717088" target="_blank">
-  <p class="descripcion">Camiseta River Plate</p>
-  <img src="CamisetaRiverPlateRetro.jpeg" alt="River Plate" />
-  <h2>River Plate</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-seleccion-argentina-adidas-2022/p/MLA31298238" target="_blank">
-  <p class="descripcion">Camiseta Selección Argentina</p>
-  <img src="CamisetaArgentinoRetro.jpeg" alt="Selección Argentina" />
-  <h2>Selección Argentina</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-racing-club-titular-2023/p/MLA32715952" target="_blank">
-  <p class="descripcion">Camiseta Racing Club</p>
-  <img src="CamisetaRacingClubRCA.jpeg" alt="Racing Club" />
-  <h2>Racing Club</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-boca-juniors-retro-2000s/p/MLA27812382" target="_blank">
-  <p class="descripcion">Camiseta Boca Juniors Retro 2009</p>
-  <img src="BocaJuniorsRetro2009.jpeg" alt="Boca Juniors Retro" />
-  <h2>Boca Juniors Retro 2009</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-barcelona-edicion-especial-travis-scott/p/MLA30481213" target="_blank">
-  <p class="descripcion">Camiseta Barcelona Travis Scott</p>
-  <img src="BarcelonaTravisScott.jpeg" alt="Barcelona" />
-  <h2>Barcelona Travis Scott</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-bayern-munich-adidas-2024/p/MLA31421194" target="_blank">
-  <p class="descripcion">Camiseta Bayern Munich 24/25</p>
-  <img src="BayernMunich.jpeg" alt="Bayern Munich" />
-  <h2>Bayern Munich 24/25</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-manchester-united-2024/p/MLA31738101" target="_blank">
-  <p class="descripcion">Camiseta Manchester United Third</p>
-  <img src="ManchesterUnited.jpeg" alt="Manchester United" />
-  <h2>Manchester United Third Player</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-arsenal-adidas-2024-black-edition/p/MLA31689997" target="_blank">
-  <p class="descripcion">Camiseta Arsenal Black 25/26</p>
-  <img src="Arsenal.jpeg" alt="Arsenal" />
-  <h2>Arsenal 25/26 Black</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-chelsea-visitante-2024/p/MLA31122482" target="_blank">
-  <p class="descripcion">Camiseta Chelsea Away 24/25</p>
-  <img src="Chelsea.jpeg" alt="Chelsea" />
-  <h2>Chelsea 24/25 Away</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-inter-de-milan-2023/p/MLA31278670" target="_blank">
-  <p class="descripcion">Camiseta Inter Milan 2023</p>
-  <img src="InterdeMilan.jpeg" alt="Inter Milan" />
-  <h2>Inter De Milan 2023</h2>
-</a>
-
-<a class="producto" href="https://www.mercadolibre.com.ar/camiseta-seleccion-mexico-black-2024/p/MLA31693050" target="_blank">
-  <p class="descripcion">Camiseta Mexico 25/26 Black</p>
-  <img src="CamisetaSeleccionMexicoBlack.jpeg" alt="Mexico" />
-  <h2>Mexico 25/26 Black</h2>
-</a>  
-  </div>
-
-  <div class="ver-mas-container" id="verMasContainer">
-    <button id="verMasBtn" onclick="mostrarMas()">Ver más</button>
-  </div>
-
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-  }
-
-  function toggleSubmenu(id) {
-    const submenu = document.getElementById(id);
-    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-  }
-
-  function mostrarMas() {
-    const ocultos = document.querySelectorAll('.producto.oculto');
-    ocultos.forEach(p => p.classList.remove('oculto'));
-    document.getElementById('verMasBtn').style.display = 'none';
-  }
-
-  function filtrarProductos() {
-    const input = document.getElementById('buscador').value.toLowerCase();
-    const productos = document.querySelectorAll('.producto');
-
-    // Mostrar todos antes de filtrar
-    productos.forEach(p => p.classList.remove('oculto'));
-
-    productos.forEach(p => {
-      const nombre = p.querySelector('h2').textContent.toLowerCase();
-      p.style.display = nombre.includes(input) ? '' : 'none';
-    });
-
-    const verMasContainer = document.getElementById('verMasContainer');
-    verMasContainer.style.display = input.length > 0 ? 'none' : 'block';
-  }
-
-window.addEventListener('DOMContentLoaded', () => {
-  const productos = document.querySelectorAll('.producto');
-  productos.forEach(p => {
-    p.style.setProperty('--delay', '0.1s');
-  });
-});
-
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js');
-    });
-  }
-</script>
 </body>
 </html>
