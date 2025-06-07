@@ -9,6 +9,10 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Bungee&family=Playfair+Display:ital,wght@0,500;1,600&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
     body {
       font-family: 'Roboto', Arial, sans-serif;
       background-color: #fff7ed;
@@ -176,6 +180,37 @@
     .oculto {
       display: none;
     }
+
+.cta-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-catalogo {
+  background-color: #ff6f61;
+  color: white;
+}
+
+.btn-instagram {
+  background-color: #833ab4;
+  color: white;
+}
+
+.btn-gmail {
+  background-color: #4285F4;
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -184,10 +219,10 @@
     <div class="menu-dropdown" id="menu">
       <a href="#" onclick="toggleSubmenu('contactoSubmenu')">Contáctanos</a>
      <div class="submenu" id="contactoSubmenu">
-  <a href="https://www.instagram.com/full90___?igsh=MTd1Z2lpanh4YmZwaQ==" target="_blank">Instagram</a>
+  <a href="https://www.instagram.com/full90_?igsh=MTd1Z2lpanh4YmZwaQ==" target="_blank">Instagram</a>
   <a href="mailto:xisupply@email.com">Gmail</a>
 </div>
-      <a href="#">Sobre Nosotros</a>
+      <a href="#sobreNosotros">Sobre Nosotros</a> 
     </div>
     <h1>XI Supply</h1>
     <p>Camisetas Exclusivas</p>
@@ -336,9 +371,15 @@
   window.addEventListener('DOMContentLoaded', () => {
     const productos = document.querySelectorAll('.producto');
     productos.forEach((p, i) => {
-      p.style.setProperty('--delay', `${i * 0.1}s`);
+      p.style.setProperty('--delay', (i * 0.1) + 's'); 
     });
-  });
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('menu');
+  const menuIcon = document.querySelector('.menu-icon');
+  if (!menu.contains(e.target) && !menuIcon.contains(e.target)) {
+    menu.style.display = 'none';
+  }
+});
 
 
 
@@ -356,6 +397,27 @@
   };
 </script>
 <script src="https://www.chatbase.co/embed.min.js" chatbotId="3__FE5t65oZOA_mCci70z" defer></script>
+
+<section id="sobreNosotros" style="padding: 60px 20px; background-color: #fff0ea; text-align: center;">
+  <h2 style="font-size: 36px; font-family: 'Playfair Display', serif;">Sobre Nosotros</h2>
+  <p style="max-width: 800px; margin: 20px auto; font-size: 18px; line-height: 1.6;">
+    Somos un equipo de 4 jóvenes con una idea clara: hacer que toda Argentina pueda acceder a camisetas de fútbol de excelente calidad, a precios accesibles.
+    <br><br>
+    Amamos el fútbol, la cultura de camiseta y creemos que no hace falta pagar una fortuna para vestir con estilo.
+    <br><br>
+    Cada modelo fue elegido por nosotros con pasión, buscando diseños únicos, actuales o retro, para que todos puedan llevar los colores que sienten.
+    <br><br>
+    Nuestro objetivo es claro: <strong>calidad, precio justo y pasión por el fútbol</strong>. Y esto recién empieza.
+  </p>
+
+ 
+
+  <div style="margin-top: 40px;">
+    <a href="#listaProductos" class="cta-button btn-catalogo">Ver Catálogo</a>
+    <a href="https://www.instagram.com/full90_?igsh=MTd1Z2lpanh4YmZwaQ==" target="_blank" class="cta-button btn-instagram">Escribinos por Instagram</a>
+    <a href="mailto:xisupply@email.com" target="_blank" class="cta-button btn-gmail">Contactanos por Gmail</a>
+  </div>
+</section>
   
 </body>
 </html>
