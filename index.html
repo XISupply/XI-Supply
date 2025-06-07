@@ -331,7 +331,35 @@ html {
     <button id="verMasBtn" onclick="mostrarMas()">Ver más</button>
   </div>
 
-  <script>
+<script>
+  window.chatbaseConfig = {
+    chatbotId: "3__FE5t65oZOA_mCci70z"
+  };
+</script>
+<script src="https://www.chatbase.co/embed.min.js" chatbotId="3__FE5t65oZOA_mCci70z" defer></script>
+
+<section id="sobreNosotros" style="padding: 60px 20px; background-color: #fff0ea; text-align: center;">
+  <h2 style="font-size: 36px; font-family: 'Playfair Display', serif;">Sobre Nosotros</h2>
+  <p style="max-width: 800px; margin: 20px auto; font-size: 18px; line-height: 1.6;">
+    Somos un equipo de 4 jóvenes con una idea clara: hacer que toda Argentina pueda acceder a camisetas de fútbol de excelente calidad, a precios accesibles.
+    <br><br>
+    Amamos el fútbol, la cultura de camiseta y creemos que no hace falta pagar una fortuna para vestir con estilo.
+    <br><br>
+    Cada modelo fue elegido por nosotros con pasión, buscando diseños únicos, actuales o retro, para que todos puedan llevar los colores que sienten.
+    <br><br>
+    Nuestro objetivo es claro: <strong>calidad, precio justo y pasión por el fútbol</strong>. Y esto recién empieza.
+  </p>
+
+ 
+
+  <div style="margin-top: 40px;">
+    <a href="#listaProductos" class="cta-button btn-catalogo">Ver Catálogo</a>
+    <a href="https://www.instagram.com/full90_?igsh=MTd1Z2lpanh4YmZwaQ==" target="_blank" class="cta-button btn-instagram">Escribinos por Instagram</a>
+    <a href="mailto:xisupply@email.com" target="_blank" class="cta-button btn-gmail">Contactanos por Gmail</a>
+  </div>
+</section>
+
+<script>
   function toggleMenu() {
     const menu = document.getElementById('menu');
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
@@ -373,51 +401,23 @@ html {
     productos.forEach((p, i) => {
       p.style.setProperty('--delay', (i * 0.1) + 's'); 
     });
-document.addEventListener('click', function(e) {
-  const menu = document.getElementById('menu');
-  const menuIcon = document.querySelector('.menu-icon');
-  if (!menu.contains(e.target) && !menuIcon.contains(e.target)) {
-    menu.style.display = 'none';
-  }
-});
 
-
+    // Cerrar menú si se hace clic fuera
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('menu');
+      const menuIcon = document.querySelector('.menu-icon');
+      if (!menu.contains(e.target) && !menuIcon.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  });
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('service-worker.js');
     });
   }
-</script> 
-
-
-<script>
-  window.chatbaseConfig = {
-    chatbotId: "3__FE5t65oZOA_mCci70z"
-  };
 </script>
-<script src="https://www.chatbase.co/embed.min.js" chatbotId="3__FE5t65oZOA_mCci70z" defer></script>
-
-<section id="sobreNosotros" style="padding: 60px 20px; background-color: #fff0ea; text-align: center;">
-  <h2 style="font-size: 36px; font-family: 'Playfair Display', serif;">Sobre Nosotros</h2>
-  <p style="max-width: 800px; margin: 20px auto; font-size: 18px; line-height: 1.6;">
-    Somos un equipo de 4 jóvenes con una idea clara: hacer que toda Argentina pueda acceder a camisetas de fútbol de excelente calidad, a precios accesibles.
-    <br><br>
-    Amamos el fútbol, la cultura de camiseta y creemos que no hace falta pagar una fortuna para vestir con estilo.
-    <br><br>
-    Cada modelo fue elegido por nosotros con pasión, buscando diseños únicos, actuales o retro, para que todos puedan llevar los colores que sienten.
-    <br><br>
-    Nuestro objetivo es claro: <strong>calidad, precio justo y pasión por el fútbol</strong>. Y esto recién empieza.
-  </p>
-
- 
-
-  <div style="margin-top: 40px;">
-    <a href="#listaProductos" class="cta-button btn-catalogo">Ver Catálogo</a>
-    <a href="https://www.instagram.com/full90_?igsh=MTd1Z2lpanh4YmZwaQ==" target="_blank" class="cta-button btn-instagram">Escribinos por Instagram</a>
-    <a href="mailto:xisupply@email.com" target="_blank" class="cta-button btn-gmail">Contactanos por Gmail</a>
-  </div>
-</section>
   
 </body>
 </html>
