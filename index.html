@@ -187,7 +187,7 @@
   <a href="https://www.instagram.com/full90___?igsh=MTd1Z2lpanh4YmZwaQ==" target="_blank">Instagram</a>
   <a href="mailto:xisupply@email.com">Gmail</a>
 </div>
-      <a href="#">Chat</a>
+      <a href="#" onclick="mostrarChat()">Chat</a>
       <a href="#">Sobre Nosotros</a>
     </div>
     <h1>XI Supply</h1>
@@ -288,7 +288,7 @@
 <a class="producto oculto" href="https://www.adidas.com.ar/camiseta-suplente-italia-23/HS9896.html" target="_blank">
   <p class="descripcion">Camiseta Italia suplente 2023</p>
   <img src="Camisetaitaliasuplente2023.jpeg" alt="Italia" />
-  <h2>Italia Supletnte 2023</h2>
+  <h2>Italia Suplente 2023</h2>
 </a>
 
   </div>
@@ -298,49 +298,65 @@
   </div>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
 
-    function toggleSubmenu(id) {
-      const submenu = document.getElementById(id);
-      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-    }
+  function toggleSubmenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+  }
 
-    function mostrarMas() {
-      const ocultos = document.querySelectorAll('.producto.oculto');
-      ocultos.forEach(p => p.classList.remove('oculto'));
-      document.getElementById('verMasBtn').style.display = 'none';
-    }
+  function mostrarMas() {
+    const ocultos = document.querySelectorAll('.producto.oculto');
+    ocultos.forEach(p => p.classList.remove('oculto'));
+    document.getElementById('verMasBtn').style.display = 'none';
+  }
 
-    function filtrarProductos() {
-      const input = document.getElementById('buscador').value.toLowerCase();
-      const productos = document.querySelectorAll('.producto');
-      productos.forEach(p => {
-        p.style.display = 'block';
-        p.classList.remove('oculto');
-      });
-      productos.forEach(p => {
-        const nombre = p.querySelector('h2').textContent.toLowerCase();
-        p.style.display = nombre.includes(input) ? 'block' : 'none';
-      });
-      const verMasContainer = document.getElementById('verMasContainer');
-      verMasContainer.style.display = input.length > 0 ? 'none' : 'block';
-    }
+  function mostrarChat() {
+    const chatDiv = document.getElementById('chatSection');
+    chatDiv.style.display = chatDiv.style.display === 'none' ? 'block' : 'none';
+  }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const productos = document.querySelectorAll('.producto');
-      productos.forEach((p, i) => {
-        p.style.setProperty('--delay', `${i * 0.1}s`);
-      });
+  function filtrarProductos() {
+    const input = document.getElementById('buscador').value.toLowerCase();
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach(p => {
+      p.style.display = 'block';
+      p.classList.remove('oculto');
     });
+    productos.forEach(p => {
+      const nombre = p.querySelector('h2').textContent.toLowerCase();
+      p.style.display = nombre.includes(input) ? 'block' : 'none';
+    });
+    const verMasContainer = document.getElementById('verMasContainer');
+    verMasContainer.style.display = input.length > 0 ? 'none' : 'block';
+  }
 
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js');
-      });
-    }
-  </script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach((p, i) => {
+      p.style.setProperty('--delay', `${i * 0.1}s`);
+    });
+  });
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js');
+    });
+  }
+</script>
+
+  <div id="chatSection" style="display: none; width: 100%; height: 600px; margin-top: 30px;">
+    <iframe
+      src="https://www.chatbase.co/chatbot-iframe/AkquR9JzK2Zvwu_xQphA4"
+      width="100%"
+      height="100%"
+      style="border: none; border-radius: 12px;"
+      allow="microphone;"
+    ></iframe>
+  </div>
+
 </body>
 </html>
