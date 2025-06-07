@@ -341,22 +341,22 @@
     });
   });
 
+
+
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('service-worker.js');
     });
   }
-</script>
+</script> 
 
-  <div id="chatSection" style="display: none; width: 100%; height: 600px; margin-top: 30px;">
-    <iframe
-      src="https://www.chatbase.co/chatbot-iframe/AkquR9JzK2Zvwu_xQphA4"
-      width="100%"
-      height="100%"
-      style="border: none; border-radius: 12px;"
-      allow="microphone;"
-    ></iframe>
-  </div>
+
+<script>
+  window.chatbaseConfig = {
+    chatbotId: "AkquR9JzK2Zvwu_xQphA4"
+  };
+</script>
+<script src="https://www.chatbase.co/embed.min.js" chatbotId="AkquR9JzK2Zvwu_xQphA4" defer></script>
 
 </body>
 </html>
