@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xisupply.github.io/XI-Supply/sitemap.xm
